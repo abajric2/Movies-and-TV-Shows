@@ -21,15 +21,7 @@ const MoviesPage: React.FC<MoviesPageProps> = ({ movies }) => {
                 console.error('Error fetching movies:', error);
             }
         };
-        if (movies.length === 0) {
-            const storedMovies = sessionStorage.getItem('movies');
-            if (storedMovies) {
-                const parsedMovies = JSON.parse(storedMovies) as Movie[];
-                setLoadedMovies(parsedMovies);
-            } else {
-                fetchData();
-            }
-        }
+        fetchData();
     }, [movies.length]);
 
     const moviesToDisplay = movies.length > 0 ? movies : loadedMovies;

@@ -21,15 +21,7 @@ const TVShowsPage: React.FC<TvShowsPageProps> = ({ tvShows }) => {
                 console.error('Error fetching TV shows:', error);
             }
         };
-        if (tvShows.length === 0) {
-            const storedTvShows = sessionStorage.getItem('tvShows');
-            if (storedTvShows) {
-                const parsedTvShows = JSON.parse(storedTvShows) as TvShow[];
-                setLoadedTvShows(parsedTvShows);
-            } else {
-                fetchData();
-            }
-        }
+        fetchData();
     }, [tvShows.length]);
 
     const tvShowsToDisplay = tvShows.length > 0 ? tvShows : loadedTvShows;

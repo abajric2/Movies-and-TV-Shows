@@ -3,15 +3,17 @@ import { useNavigate } from 'react-router-dom';
 import { fetchTvShows, fetchMovies } from '../../services/api';
 import { TvShow } from '../../types/TVShowTypes';
 import { Movie } from '../../types/MovieTypes';
+import { useAppContext } from '../../context/AppContext';
+import './Navbar.css'
 
 interface NavbarProps {
-    activeTab: 'movies' | 'tvShows';
     setTvShows: React.Dispatch<React.SetStateAction<TvShow[]>>;
     setMovies: React.Dispatch<React.SetStateAction<Movie[]>>;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ activeTab, setTvShows, setMovies }) => {
+const Navbar: React.FC<NavbarProps> = ({ setTvShows, setMovies }) => {
     const navigate = useNavigate();
+    const { activeTab, setActiveTab } = useAppContext(); 
 
     const handleTabClick = async (tab: 'movies' | 'tvShows') => {
         if (tab === 'tvShows') {
@@ -23,6 +25,8 @@ const Navbar: React.FC<NavbarProps> = ({ activeTab, setTvShows, setMovies }) => 
             sessionStorage.setItem('movies', JSON.stringify(fetchedMovies));
             setMovies(fetchedMovies);
         }
+        setActiveTab(tab); 
+        console.log("Aktivan ", activeTab)
         navigate(`/${tab}`);
     };
 

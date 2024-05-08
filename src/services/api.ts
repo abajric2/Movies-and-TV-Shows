@@ -41,4 +41,28 @@ export const fetchMovies = async (): Promise<Movie[]> => {
     return tvShows;
 };
 
+export const searchMovies = async (query: string): Promise<Movie[]> => {
+    const url = `${API_BASE_URL}/search/movie?query=${query}&include_adult=false&language=en-US&page=1&api_key=${API_KEY}`;
+    const config: AxiosRequestConfig = { url };
+    const data = await fetchData<MovieResponse>(config);
+
+    if (!data || !data.results) {
+        throw new Error('Invalid data format received from API');
+    }
+
+    return data.results;
+};
+
+export const searchTVShows = async (query: string): Promise<TvShow[]> => {
+    const url = `${API_BASE_URL}/search/tv?query=${query}&include_adult=false&language=en-US&page=1&api_key=${API_KEY}`;
+    const config: AxiosRequestConfig = { url };
+    const data = await fetchData<TvShowsResponse>(config);
+
+    if (!data || !data.results) {
+        throw new Error('Invalid data format received from API');
+    }
+
+    return data.results;
+};
+
 export default fetchData;

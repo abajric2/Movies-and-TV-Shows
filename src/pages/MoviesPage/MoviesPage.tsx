@@ -3,12 +3,14 @@ import { Movie } from '../../types/MovieTypes';
 import MovieGridItem from '../../components/MovieGridItem/MovieGridItem';
 import './MoviesPage.css';
 import { fetchMovies } from '../../services/api';
+import { useAppContext } from '../../context/AppContext';
 
 interface MoviesPageProps {
     movies: Movie[];
 }
 
 const MoviesPage: React.FC<MoviesPageProps> = ({ movies }) => {
+    const { activeMovies, topMoviesVisible } = useAppContext();
     const [loadedMovies, setLoadedMovies] = useState<Movie[]>([]);
 
     useEffect(() => {
@@ -22,9 +24,9 @@ const MoviesPage: React.FC<MoviesPageProps> = ({ movies }) => {
             }
         };
         fetchData();
-    }, [movies.length]);
+    }, [movies]);
 
-    const moviesToDisplay = movies.length > 0 ? movies : loadedMovies;
+    const moviesToDisplay = (topMoviesVisible) ? (movies.length > 0 ? movies : loadedMovies) : (activeMovies);
 
     return (
         <div className="movies-grid">

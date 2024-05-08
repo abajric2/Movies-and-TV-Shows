@@ -3,12 +3,14 @@ import { TvShow } from '../../types/TVShowTypes';
 import TvShowGridItem from '../../components/TVShowGridItem/TVShowGridItem';
 import './TVShowsPage.css';
 import { fetchTvShows } from '../../services/api';
+import { useAppContext } from '../../context/AppContext';
 
 interface TvShowsPageProps {
     tvShows: TvShow[];
 }
 
 const TVShowsPage: React.FC<TvShowsPageProps> = ({ tvShows }) => {
+    const { activeTVShows, topTvShowsVisible } = useAppContext();
     const [loadedTvShows, setLoadedTvShows] = useState<TvShow[]>([]);
 
     useEffect(() => {
@@ -22,9 +24,9 @@ const TVShowsPage: React.FC<TvShowsPageProps> = ({ tvShows }) => {
             }
         };
         fetchData();
-    }, [tvShows.length]);
+    }, [tvShows]);
 
-    const tvShowsToDisplay = tvShows.length > 0 ? tvShows : loadedTvShows;
+    const tvShowsToDisplay = (topTvShowsVisible) ? (tvShows.length > 0 ? tvShows : loadedTvShows) : (activeTVShows);
 
     return (
         <div className="tv-shows-grid">

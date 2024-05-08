@@ -6,6 +6,7 @@ import TvShowsPage from '../../pages/TVShowsPage/TVShowsPage';
 import { TvShow } from '../../types/TVShowTypes';
 import { Movie } from '../../types/MovieTypes';
 import { AppProvider } from '../../context/AppContext';
+import Search from '../../components//Search/Search'
 
 const App: React.FC = () => {
   const [tvShows, setTvShows] = useState<TvShow[]>([]);
@@ -16,6 +17,7 @@ const App: React.FC = () => {
       <Router>
         <div className="app">
           <Navbar setTvShows={setTvShows} setMovies={setMovies} />
+          <Search/>
           <Routes>
             <Route path="/movies" element={<MoviesPage movies={movies} />} />
             <Route path="/tvShows" element={<TvShowsPage tvShows={tvShows} />} />

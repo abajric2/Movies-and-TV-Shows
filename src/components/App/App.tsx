@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom'; // Promenjen uvoz
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom'; 
 import Navbar from '../Navbar/Navbar';
 import MoviesPage from '../../pages/MoviesPage/MoviesPage';
 import TvShowsPage from '../../pages/TVShowsPage/TVShowsPage';

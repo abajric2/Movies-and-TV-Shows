@@ -14,11 +14,10 @@ const Navbar: React.FC<NavbarProps> = ({ activeTab, setTvShows }) => {
     const handleTabClick = async (tab: 'movies' | 'tvShows') => {
         if (tab === 'tvShows') {
             const fetchedTvShows = await fetchTvShows();
+            sessionStorage.setItem('tvShows', JSON.stringify(fetchedTvShows));
             setTvShows(fetchedTvShows);
-            navigate(`/${tab}`);
-        } else {
-            navigate(`/${tab}`);
-        }
+        } 
+        navigate(`/${tab}`);
     };
 
     return (

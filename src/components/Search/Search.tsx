@@ -7,7 +7,6 @@ const Search: React.FC = () => {
     const [searchTerm, setSearchTerm] = useState('');
 
     useEffect(() => {
-        let timeoutId: NodeJS.Timeout;
         const handleInput = () => {
             if (searchTerm.length >= 3) {
                 if (activeTab === 'movies') {
@@ -38,7 +37,7 @@ const Search: React.FC = () => {
             }
         };
 
-        timeoutId = setTimeout(handleInput, 1000);
+        const timeoutId = setTimeout(handleInput, 1000);
 
         return () => clearTimeout(timeoutId);
     }, [searchTerm, activeTab, setActiveMovies, setActiveTVShows, setTopMoviesVisible, setTopTvShowsVisible]);

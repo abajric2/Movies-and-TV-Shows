@@ -1,12 +1,12 @@
-export interface TvShow {
+export interface Movie {
     backdrop_path: string;
     genre_ids: number[];
     id: number;
     poster_path: string;
-    name: string;
+    title: string;
 }
 
-export interface TvShowsResponse {
+export interface MovieResponse {
     page: number;
-    results: TvShow[];
+    results: Movie[];
 }

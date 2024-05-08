@@ -1,0 +1,16 @@
+.movie-grid-item {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.movie-grid-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+}
+
+.movie-grid-item h3 {
+    margin: 10px 0;
+    text-align: center;
+}

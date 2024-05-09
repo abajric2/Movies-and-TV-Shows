@@ -11,7 +11,7 @@ const TvShowGridItem: React.FC<TvShowGridItemProps> = ({ tvShow }) => {
 
   return (
     <div className="tv-show-grid-item">
-      <img src={posterUrl} alt={tvShow.name} />
+      <img src={posterUrl} alt={tvShow.name} onClick={()=>{console.log("TV zanr ", tvShow.genres)}}/>
       <h3>{tvShow.name}</h3>
     </div>
   );

@@ -11,7 +11,7 @@ const MovieGridItem: React.FC<MovieGridItemProps> = ({ movie }) => {
 
   return (
     <div className="movie-grid-item">
-      <img src={posterUrl} alt={movie.title} />
+      <img src={posterUrl} alt={movie.title} onClick={()=>{console.log("Zanrovi ", movie.genres)}}/>
       <h3>{movie.title}</h3>
     </div>
   );

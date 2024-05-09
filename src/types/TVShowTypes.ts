@@ -1,3 +1,5 @@
+import {Genre} from './Genre'
+
 export interface TvShow {
     backdrop_path: string;
     genre_ids: number[];
@@ -7,10 +9,11 @@ export interface TvShow {
     overview: string;
     first_air_date: string;
     vote_average: number;
-    genres: string[];
+    genres: Genre[];
 }
 
 export interface TvShowsResponse {
     page: number;
     results: TvShow[];
+    genres: Genre[];
 }

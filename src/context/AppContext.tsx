@@ -11,9 +11,9 @@ export const AppContext = createContext<AppContextValue>({
     activeTVShows: [],
     setActiveTVShows: () => { },
     topMoviesVisible: true,
-    setTopMoviesVisible: () => {},
+    setTopMoviesVisible: () => { },
     topTvShowsVisible: true,
-    setTopTvShowsVisible: () => {}
+    setTopTvShowsVisible: () => { }
 });
 
 export const useAppContext = () => useContext(AppContext);
@@ -34,17 +34,17 @@ export const AppProvider: React.FC<AppContextProviderProps> = ({ children }) => 
     }, [activeTab]);
 
     return (
-        <AppContext.Provider value={{ 
-            activeTab, 
-            setActiveTab, 
-            activeMovies, 
-            setActiveMovies, 
-            activeTVShows, 
-            setActiveTVShows, 
-            topMoviesVisible, 
-            setTopMoviesVisible, 
-            topTvShowsVisible, 
-            setTopTvShowsVisible 
+        <AppContext.Provider value={{
+            activeTab,
+            setActiveTab,
+            activeMovies,
+            setActiveMovies,
+            activeTVShows,
+            setActiveTVShows,
+            topMoviesVisible,
+            setTopMoviesVisible,
+            topTvShowsVisible,
+            setTopTvShowsVisible
         }}>
             {children}
         </AppContext.Provider>

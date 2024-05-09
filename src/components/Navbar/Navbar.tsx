@@ -13,20 +13,19 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ setTvShows, setMovies }) => {
     const navigate = useNavigate();
-    const { activeTab, setActiveTab } = useAppContext(); 
+    const { activeTab, setActiveTab } = useAppContext();
 
     const handleTabClick = async (tab: 'movies' | 'tvShows') => {
         if (tab === 'tvShows') {
             const fetchedTvShows = await fetchTvShows();
             sessionStorage.setItem('tvShows', JSON.stringify(fetchedTvShows));
             setTvShows(fetchedTvShows);
-        }  else {
+        } else {
             const fetchedMovies = await fetchMovies();
             sessionStorage.setItem('movies', JSON.stringify(fetchedMovies));
             setMovies(fetchedMovies);
         }
-        setActiveTab(tab); 
-        console.log("Aktivan ", activeTab)
+        setActiveTab(tab);
         navigate(`/${tab}`);
     };
 

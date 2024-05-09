@@ -13,7 +13,7 @@ const TvShowGridItem: React.FC<TvShowGridItemProps> = ({ tvShow }) => {
 
   return (
     <Link to={`/tvShow/${tvShow.id}`} className="tv-show-grid-item">
-      <img src={posterUrl} alt={tvShow.name} onClick={()=>{console.log(tvShow.genres)}}/>
+      <img src={posterUrl} alt={tvShow.name} />
       <h3>{tvShow.name}</h3>
       <p>Genres: {tvShow?.genres.map((genre: Genre) => genre.name).join(', ')}</p>
     </Link>

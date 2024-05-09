@@ -29,7 +29,7 @@ const fetchGenres = async (mediaType: 'movie' | 'tv'): Promise<Genre[]> => {
     return data.genres;
 };
 
-const mapGenreIdsToStrings = async <T extends { id:number; genre_ids: number[] }>(
+const mapGenreIdsToStrings = async <T extends { id: number; genre_ids: number[] }>(
     mediaType: 'movie' | 'tv',
     items: T[]
 ): Promise<T[]> => {
@@ -38,7 +38,7 @@ const mapGenreIdsToStrings = async <T extends { id:number; genre_ids: number[] }
         const genreObjects = item.genre_ids.map(id => {
             const genre = genres.find(genre => genre.id === id);
             return genre ? { id: item.id, name: genre.name } : null;
-        }).filter(genre => genre !== null) as Genre[]; 
+        }).filter(genre => genre !== null) as Genre[];
         return { ...item, genres: genreObjects };
     });
 };
@@ -118,7 +118,6 @@ export const fetchMovieById = async (id: number): Promise<Movie | null> => {
         return null;
     }
 
-    // Fetching trailers for the movie
     const trailer = await fetchVideosById(id, 'movie');
     data.trailer = trailer;
 
@@ -139,7 +138,6 @@ export const fetchTVShowById = async (id: number): Promise<TvShow | null> => {
         return null;
     }
 
-    // Fetching trailers for the TV show
     const trailer = await fetchVideosById(id, 'tv');
     data.trailer = trailer;
 
@@ -150,10 +148,5 @@ export const fetchTVShowById = async (id: number): Promise<TvShow | null> => {
 
     return data;
 };
-// Funkcija za dohvaćanje trejlera na osnovu ID-a
-
-
-
-
 
 export default fetchData;

@@ -19,7 +19,6 @@ const MovieDetails: React.FC = () => {
         const fetchData = async () => {
             try {
                 const movieData = await fetchMovieById(Number(id));
-                console.log("Movie ", movieData)
                 setMovie(movieData);
             } catch (error) {
                 console.error('Error fetching movie details:', error);
@@ -32,7 +31,7 @@ const MovieDetails: React.FC = () => {
     return (
         <div>
             {movie && (<div className="movie-details">
-                <button onClick={() => {navigate(`/${activeTab}`)}}>Back</button>
+                <button onClick={() => { navigate(`/${activeTab}`) }}>Back</button>
                 {movie.trailer ? (
                     <iframe
                         width="560"

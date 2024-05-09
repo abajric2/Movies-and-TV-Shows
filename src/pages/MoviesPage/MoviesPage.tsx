@@ -27,7 +27,6 @@ const MoviesPage: React.FC<MoviesPageProps> = ({ movies }) => {
     }, [movies]);
 
     const moviesToDisplay = (topMoviesVisible) ? (movies.length > 0 ? movies : loadedMovies) : (activeMovies);
-    console.log("Movies to disp ", moviesToDisplay)
     return (
         <div className="movies-grid">
             {moviesToDisplay.map((movie) => (

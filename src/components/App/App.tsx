@@ -15,7 +15,6 @@ const App: React.FC = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
   const location = useLocation();
 
-  // Provjeravamo trenutnu rutu da odredimo treba li prikazati Navbar i Search
   const showNavbarAndSearch = !location.pathname.startsWith('/movie/') && !location.pathname.startsWith('/tvShow/');
 
   return (

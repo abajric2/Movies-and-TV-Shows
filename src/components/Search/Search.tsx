@@ -4,7 +4,7 @@ import { searchMovies, searchTVShows } from '../../services/api';
 
 const Search: React.FC = () => {
     const { activeTab, setActiveMovies, setActiveTVShows, setTopMoviesVisible, setTopTvShowsVisible } = useAppContext();
-    const [searchTerm, setSearchTerm] = useState(sessionStorage.getItem('searchTerm') || ''); 
+    const [searchTerm, setSearchTerm] = useState(sessionStorage.getItem('searchTerm') || '');
 
     useEffect(() => {
         sessionStorage.setItem('searchTerm', searchTerm);

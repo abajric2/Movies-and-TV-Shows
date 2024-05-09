@@ -2,6 +2,7 @@ import axios, { AxiosRequestConfig } from 'axios';
 import { TvShow, TvShowsResponse } from '../types/TVShowTypes';
 import { Movie, MovieResponse } from '../types/MovieTypes';
 import { Genre } from '../types/Genre';
+import { Trailer } from '../types/Trailer';
 
 const API_BASE_URL = 'https://api.themoviedb.org/3';
 const API_KEY = '18d8131ff2d912b3171edc9bd7f4c492';
@@ -94,16 +95,38 @@ export const searchTVShows = async (query: string): Promise<TvShow[]> => {
     return tvShows;
 };
 
+const fetchVideosById = async (id: number, mediaType: 'movie' | 'tv'): Promise<string | null> => {
+    const url = `${API_BASE_URL}/${mediaType}/${id}/videos?language=en-US&api_key=${API_KEY}`;
+    const config: AxiosRequestConfig = { url };
+    const data = await fetchData<{ results: Trailer[] }>(config);
+
+    if (data && data.results && data.results.length > 0) {
+        const trailer = data.results.find(result => result.type === 'Trailer');
+        if (trailer) {
+            return `${trailer.key}`;
+        }
+    }
+    return null;
+};
+
 export const fetchMovieById = async (id: number): Promise<Movie | null> => {
     const url = `${API_BASE_URL}/movie/${id}?language=en-US&api_key=${API_KEY}`;
     const config: AxiosRequestConfig = { url };
     const data = await fetchData<Movie>(config);
 
-    if (data && data.genres) {
-        const genres: Genre[] = data.genres.map(genre => ({ id: genre.id, name: genre.name })); 
+    if (!data) {
+        return null;
+    }
+
+    // Fetching trailers for the movie
+    const trailer = await fetchVideosById(id, 'movie');
+    data.trailer = trailer;
+
+    if (data.genres) {
+        const genres: Genre[] = data.genres.map(genre => ({ id: genre.id, name: genre.name }));
         data.genres = genres;
     }
-    
+
     return data;
 };
 
@@ -112,12 +135,25 @@ export const fetchTVShowById = async (id: number): Promise<TvShow | null> => {
     const config: AxiosRequestConfig = { url };
     const data = await fetchData<TvShow>(config);
 
-    if (data && data.genres) {
-        const genres: Genre[] = data.genres.map(genre => ({ id: genre.id, name: genre.name })); 
+    if (!data) {
+        return null;
+    }
+
+    // Fetching trailers for the TV show
+    const trailer = await fetchVideosById(id, 'tv');
+    data.trailer = trailer;
+
+    if (data.genres) {
+        const genres: Genre[] = data.genres.map(genre => ({ id: genre.id, name: genre.name }));
         data.genres = genres;
     }
-    
+
     return data;
 };
+// Funkcija za dohvaćanje trejlera na osnovu ID-a
+
+
+
+
 
 export default fetchData;

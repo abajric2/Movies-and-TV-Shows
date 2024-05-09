@@ -10,6 +10,7 @@ export interface TvShow {
     first_air_date: string;
     vote_average: number;
     genres: Genre[];
+    trailer?: string | null;
 }
 
 export interface TvShowsResponse {

@@ -10,6 +10,7 @@ export interface Movie {
     release_date: string;
     vote_average: number;
     genres: Genre[];
+    trailer?: string | null;
 }
 
 export interface MovieResponse {

@@ -12,7 +12,7 @@ const TVShowDetails: React.FC = () => {
     const [tvShow, setTvShow] = useState<TvShow | null>(null);
     const backdropUrl = `https://image.tmdb.org/t/p/original${tvShow?.backdrop_path}`;
     const navigate = useNavigate();
-    const { activeTab } = useAppContext(); 
+    const { activeTab } = useAppContext();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -33,8 +33,18 @@ const TVShowDetails: React.FC = () => {
         <div>
             {tvShow && (
                 <div className="tv-show-details">
-                    <button onClick={() => {navigate(`/${activeTab}`)}}>Back</button>
-                    <img className='tv-show-backdrop' src={backdropUrl} alt={tvShow.name} />
+                    <button onClick={() => { navigate(`/${activeTab}`) }}>Back</button>
+                    {tvShow.trailer ? (
+                        <iframe
+                            width="560"
+                            height="315"
+                            src={`https://www.youtube.com/embed/${tvShow.trailer}`}
+                            title="YouTube video player"
+                            allowFullScreen
+                        ></iframe>
+                    ) : (
+                        <img className='tv-show-backdrop' src={backdropUrl} alt={tvShow?.name} />
+                    )}
                     <h2>{tvShow.name}</h2>
                     <p>
                         Genres: {tvShow?.genres.map((genre: Genre) => genre.name).join(', ')}

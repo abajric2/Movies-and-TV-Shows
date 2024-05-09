@@ -4,9 +4,11 @@ import { searchMovies, searchTVShows } from '../../services/api';
 
 const Search: React.FC = () => {
     const { activeTab, setActiveMovies, setActiveTVShows, setTopMoviesVisible, setTopTvShowsVisible } = useAppContext();
-    const [searchTerm, setSearchTerm] = useState('');
+    const [searchTerm, setSearchTerm] = useState(sessionStorage.getItem('searchTerm') || ''); 
 
     useEffect(() => {
+        sessionStorage.setItem('searchTerm', searchTerm);
+
         const handleInput = () => {
             if (searchTerm.length >= 3) {
                 if (activeTab === 'movies') {

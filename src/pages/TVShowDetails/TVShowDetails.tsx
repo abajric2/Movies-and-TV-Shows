@@ -3,10 +3,12 @@ import { useParams } from 'react-router-dom';
 import { fetchTVShowById } from '../../services/api';
 import { TvShow } from '../../types/TVShowTypes';
 import { Genre } from '../../types/Genre';
+import './TVShowDetails.css'
 
 const TVShowDetails: React.FC = () => {
     const { id } = useParams<{ id: string }>();
     const [tvShow, setTvShow] = useState<TvShow | null>(null);
+    const backdropUrl = `https://image.tmdb.org/t/p/original${tvShow?.backdrop_path}`;
 
     useEffect(() => {
         const fetchData = async () => {
@@ -27,7 +29,7 @@ const TVShowDetails: React.FC = () => {
         <div>
             {tvShow && (
                 <div className="tv-show-details">
-                    <img src={tvShow.backdrop_path} alt={tvShow.name} />
+                    <img className='tv-show-backdrop' src={backdropUrl} alt={tvShow.name} />
                     <h2>{tvShow.name}</h2>
                     <p>
                         Genres: {tvShow?.genres.map((genre: Genre) => genre.name).join(', ')}

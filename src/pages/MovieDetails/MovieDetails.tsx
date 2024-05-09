@@ -3,10 +3,12 @@ import { useParams } from 'react-router-dom';
 import { fetchMovieById } from '../../services/api';
 import { Movie } from '../../types/MovieTypes';
 import { Genre } from '../../types/Genre';
+import './MovieDetails.css'
 
 const MovieDetails: React.FC = () => {
     const { id } = useParams<{ id: string }>();
     const [movie, setMovie] = useState<Movie | null>(null);
+    const backdropUrl = `https://image.tmdb.org/t/p/original${movie?.backdrop_path}`;
 
     useEffect(() => {
         const fetchData = async () => {
@@ -25,7 +27,7 @@ const MovieDetails: React.FC = () => {
     return (
         <div>
             {movie && (<div className="movie-details">
-                <img src={movie?.backdrop_path} alt={movie?.title} />
+                <img className='movie-backdrop' src={backdropUrl} alt={movie?.title} />
                 <h2>{movie?.title}</h2>
                 <p>
                     Genres: {movie?.genres.map((genre: Genre) => genre.name).join(', ')}

@@ -1,16 +1,57 @@
 .movie-grid-item {
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    position: relative; 
+    background-color: #0F0F0F;
+    transition: transform 0.3s ease;
 }
+.movie-grid-item:hover {
+    transform: scale(1.03); 
+}
+
 
 .movie-grid-item img {
     width: 100%;
-    height: auto;
+    height: 420px;
     border-radius: 10px 10px 0 0;
 }
 
+.genres-and-rating {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 5px 10px;
+}
+
+.genres {
+    color: white;
+    overflow: hidden; 
+    white-space: nowrap;
+    text-overflow: ellipsis; 
+    margin-right: 20px;
+}
+
+.vote-average {
+    color: white;
+    display: flex;
+    align-items: center; 
+}
+
+.vote-average p {
+    margin: 0;
+    padding-left: 5px;
+}
+
+.genres p {
+    margin: 0;
+    padding-right: 5px;
+}
+
 .movie-grid-item h3 {
-    margin: 10px 0;
+    color: white;
     text-align: center;
 }

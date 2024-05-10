@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchTVShowById } from '../../services/api';
-import { TvShow } from '../../types/TVShowTypes';
+import { TvShow } from '../../types/TVShow';
 import { Genre } from '../../types/Genre';
 import '../../styles/MediaDetails.css'
 import { useNavigate } from 'react-router-dom';

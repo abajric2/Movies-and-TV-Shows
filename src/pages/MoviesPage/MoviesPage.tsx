@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Movie } from '../../types/MovieTypes';
+import { Movie } from '../../types/Movie';
 import MovieGridItem from '../../components/MovieGridItem/MovieGridItem';
 import './MoviesPage.css';
 import { fetchMovies } from '../../services/api';

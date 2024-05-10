@@ -1,6 +1,7 @@
 import { Dispatch, SetStateAction } from 'react';
-import { Movie } from '../types/MovieTypes';
-import { TvShow } from '../types/TVShowTypes';
+import { Movie } from './Movie';
+import { TvShow } from './TVShow';
+import { ActiveTab } from './ActiveTab';
 
 export interface AppContextValue {
     activeTab: ActiveTab;
@@ -19,5 +20,3 @@ export interface AppContextValue {
 export interface AppContextProviderProps {
     children: React.ReactNode;
 }
-
-export type ActiveTab = 'movies' | 'tvShows';

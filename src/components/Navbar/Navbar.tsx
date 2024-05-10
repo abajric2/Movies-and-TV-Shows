@@ -1,8 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { fetchTvShows, fetchMovies } from '../../services/api';
-import { TvShow } from '../../types/TVShowTypes';
-import { Movie } from '../../types/MovieTypes';
+import { TvShow } from '../../types/TVShow';
+import { Movie } from '../../types/Movie';
 import { useAppContext } from '../../context/AppContext';
 import './Navbar.css';
 

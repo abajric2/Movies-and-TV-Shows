@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { TvShow } from '../../types/TVShowTypes';
+import { TvShow } from '../../types/TVShow';
 import TvShowGridItem from '../../components/TVShowGridItem/TVShowGridItem';
 import './TVShowsPage.css';
 import { fetchTvShows } from '../../services/api';

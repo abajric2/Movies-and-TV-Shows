@@ -1,7 +1,7 @@
 import axios, { AxiosRequestConfig } from 'axios';
-import { TvShow } from '../types/TVShowTypes';
-import { Movie } from '../types/MovieTypes';
-import {Media} from '../types/Media'
+import { TvShow } from '../types/TVShow';
+import { Movie } from '../types/Movie';
+import { Media } from '../types/Media'
 import { MediaResponse } from '../types/MediaResponse';
 import { Genre } from '../types/Genre';
 import { Trailer } from '../types/Trailer';

@@ -1,7 +1,8 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { AppContextValue, AppContextProviderProps, ActiveTab } from '../types/AppContextTypes';
-import { Movie } from '../types/MovieTypes';
-import { TvShow } from '../types/TVShowTypes';
+import { AppContextValue, AppContextProviderProps } from '../types/AppContext';
+import { ActiveTab } from '../types/ActiveTab';
+import { Movie } from '../types/Movie';
+import { TvShow } from '../types/TVShow';
 
 export const AppContext = createContext<AppContextValue>({
     activeTab: 'tvShows',

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { TvShow } from '../../types/TVShowTypes';
+import { TvShow } from '../../types/TVShow';
 import { Genre } from '../../types/Genre';
 import '../../styles/GridItem.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

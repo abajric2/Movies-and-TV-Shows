@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Movie } from '../../types/MovieTypes';
+import { Movie } from '../../types/Movie';
 import { Genre } from '../../types/Genre';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';

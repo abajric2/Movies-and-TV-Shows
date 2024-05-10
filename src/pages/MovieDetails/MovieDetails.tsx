@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchMovieById } from '../../services/api';
-import { Movie } from '../../types/MovieTypes';
+import { Movie } from '../../types/Movie';
 import { Genre } from '../../types/Genre';
 import '../../styles/MediaDetails.css'
 import { useNavigate } from 'react-router-dom';

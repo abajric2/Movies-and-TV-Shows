@@ -31,7 +31,7 @@ const TVShowDetails: React.FC = () => {
 
     return (
         <div className="media-details-container">
-            {tvShow && (
+            {tvShow ? (
                 <div>
                     <button className="back-button" onClick={() => { navigate(`/${activeTab}`) }}>Back</button>
                     <div className="media-container">
@@ -66,6 +66,8 @@ const TVShowDetails: React.FC = () => {
                         <p>{tvShow.overview}</p>
                     </div>
                 </div>
+            ) : (
+                <div className='not-found'>TV Show not found</div>
             )}
         </div>
     );

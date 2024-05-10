@@ -30,7 +30,7 @@ const MovieDetails: React.FC = () => {
 
     return (
         <div className="media-details-container">
-            {movie && (
+            {movie ? (
                 <div>
                     <button className="back-button" onClick={() => { navigate(`/${activeTab}`) }}>Back</button>
                     <div className="media-container">
@@ -65,6 +65,8 @@ const MovieDetails: React.FC = () => {
                         <p>{movie.overview}</p>
                     </div>
                 </div>
+            ) : (
+                <div className='not-found'>Movie not found</div>
             )}
         </div>
     );

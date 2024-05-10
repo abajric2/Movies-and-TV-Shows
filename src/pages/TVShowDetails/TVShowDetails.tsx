@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { fetchTVShowById } from '../../services/api';
 import { TvShow } from '../../types/TVShowTypes';
 import { Genre } from '../../types/Genre';
-import './TVShowDetails.css'
+import '../../styles/MediaDetails.css'
 import { useNavigate } from 'react-router-dom';
 import { useAppContext } from '../../context/AppContext';
 
@@ -30,28 +30,35 @@ const TVShowDetails: React.FC = () => {
     }, [id]);
 
     return (
-        <div>
+        <div className="media-details-container">
             {tvShow && (
-                <div className="tv-show-details">
-                    <button onClick={() => { navigate(`/${activeTab}`) }}>Back</button>
-                    {tvShow.trailer ? (
-                        <iframe
-                            width="560"
-                            height="315"
-                            src={`https://www.youtube.com/embed/${tvShow.trailer}`}
-                            title="YouTube video player"
-                            allowFullScreen
-                        ></iframe>
-                    ) : (
-                        <img className='tv-show-backdrop' src={backdropUrl} alt={tvShow?.name} />
-                    )}
-                    <h2>{tvShow.name}</h2>
-                    <p>
-                        Genres: {tvShow?.genres.map((genre: Genre) => genre.name).join(', ')}
-                    </p>
-                    <p>{tvShow.overview}</p>
-                    <p>Release Date: {tvShow.first_air_date}</p>
-                    <p>Vote Average: {tvShow.vote_average}</p>
+                <div>
+                    <button className="back-button" onClick={() => { navigate(`/${activeTab}`) }}>Back</button>
+                    <div className="media-container">
+                        {tvShow.trailer ? (
+                            <iframe
+                                width="900"
+                                height="400"
+                                src={`https://www.youtube.com/embed/${tvShow.trailer}`}
+                                title="YouTube video player"
+                                allowFullScreen
+                            ></iframe>
+                        ) : (
+                            <img src={backdropUrl} alt={tvShow?.name} className="media" />
+                        )}
+                        <div className="basic-details">
+                            <h2>{tvShow.name}</h2>
+                            <p>
+                                <strong>Genres:</strong> {tvShow?.genres.map((genre: Genre) => genre.name).join(', ')}
+                            </p>
+                            <p><strong>Release Date:</strong> {tvShow.first_air_date}</p>
+                            <p><strong>Rating:</strong> {tvShow.vote_average}</p>
+                        </div>
+                    </div>
+                    <div className="overview">
+                        <h3>Overview</h3>
+                        <p>{tvShow.overview}</p>
+                    </div>
                 </div>
             )}
         </div>

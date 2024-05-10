@@ -30,3 +30,7 @@
     border-radius: 5px;
 }
 
+.navbar button:hover {
+    background-color: rgba(128, 128, 128, 0.142);
+    border-radius: 5px;
+}

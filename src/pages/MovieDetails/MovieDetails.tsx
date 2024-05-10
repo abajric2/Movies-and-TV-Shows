@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { fetchMovieById } from '../../services/api';
 import { Movie } from '../../types/MovieTypes';
 import { Genre } from '../../types/Genre';
-import './MovieDetails.css'
+import '../../styles/MediaDetails.css'
 import { useNavigate } from 'react-router-dom';
 import { useAppContext } from '../../context/AppContext';
 
@@ -30,27 +30,28 @@ const MovieDetails: React.FC = () => {
 
     return (
         <div>
-            {movie && (<div className="movie-details">
-                <button onClick={() => { navigate(`/${activeTab}`) }}>Back</button>
-                {movie.trailer ? (
-                    <iframe
-                        width="560"
-                        height="315"
-                        src={`https://www.youtube.com/embed/${movie.trailer}`}
-                        title="YouTube video player"
-                        allowFullScreen
-                    ></iframe>
-                ) : (
-                    <img className='movie-backdrop' src={backdropUrl} alt={movie?.title} />
-                )}
-                <h2>{movie?.title}</h2>
-                <p>
-                    Genres: {movie?.genres.map((genre: Genre) => genre.name).join(', ')}
-                </p>
-                <p>{movie?.overview}</p>
-                <p>Release Date: {movie?.release_date}</p>
-                <p>Vote Average: {movie?.vote_average}</p>
-            </div>)}
+            {movie &&
+                (<div>
+                    <button onClick={() => { navigate(`/${activeTab}`) }}>Back</button>
+                    {movie.trailer ? (
+                        <iframe
+                            width="560"
+                            height="315"
+                            src={`https://www.youtube.com/embed/${movie.trailer}`}
+                            title="YouTube video player"
+                            allowFullScreen
+                        ></iframe>
+                    ) : (
+                        <img src={backdropUrl} alt={movie?.title} />
+                    )}
+                    <h2>{movie?.title}</h2>
+                    <p>
+                        Genres: {movie?.genres.map((genre: Genre) => genre.name).join(', ')}
+                    </p>
+                    <p>{movie?.overview}</p>
+                    <p>Release Date: {movie?.release_date}</p>
+                    <p>Vote Average: {movie?.vote_average}</p>
+                </div>)}
         </div>
     );
 };

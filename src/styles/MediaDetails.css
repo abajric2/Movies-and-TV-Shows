@@ -1,0 +1,51 @@
+.media-details-container {
+    padding: 20px;
+}
+
+.back-button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.media-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.media {
+    width: 900px;
+    height: 400px;
+    margin-right: 20px;
+}
+.media-container iframe {
+    border: none;
+}
+
+.basic-details {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.basic-details h2 {
+    color: white;
+}
+
+.basic-details p {
+    color: white;
+}
+
+.overview {
+    margin-top: 20px;
+}
+
+.overview h3 {
+    color: white;
+}
+
+.overview p {
+    color: white;
+}

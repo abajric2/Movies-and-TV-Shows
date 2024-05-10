@@ -6,10 +6,10 @@
     background-color: #0F0F0F;
     transition: transform 0.3s ease;
 }
+
 .grid-item:hover {
     transform: scale(1.03); 
 }
-
 
 .grid-item img {
     width: 100%;
@@ -41,14 +41,10 @@
     align-items: center; 
 }
 
-.vote-average p {
-    margin: 0;
-    padding-left: 5px;
-}
-
+.vote-average p,
 .genres p {
     margin: 0;
-    padding-right: 5px;
+    padding-left: 5px;
 }
 
 .grid-item h3 {

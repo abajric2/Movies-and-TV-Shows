@@ -11,6 +11,7 @@
     margin-bottom: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
 .back-button:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
@@ -25,6 +26,7 @@
     height: 400px;
     margin-right: 20px;
 }
+
 .media-container iframe {
     border: none;
 }
@@ -34,11 +36,10 @@
     margin-left: 20px;
 }
 
-.basic-details h2 {
-    color: white;
-}
-
-.basic-details p {
+.basic-details h2,
+.basic-details p,
+.overview h3,
+.overview p {
     color: white;
 }
 
@@ -46,13 +47,6 @@
     margin-top: 20px;
 }
 
-.overview h3 {
-    color: white;
-}
-
-.overview p {
-    color: white;
-}
 .video-wrapper,
 .image-wrapper {
     position: relative;
@@ -80,6 +74,7 @@
 .image-wrapper:hover .media-title {
     display: none;
 }
+
 .not-found {
     font-size: xx-large;
     text-align: center;

@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useAppContext } from '../../context/AppContext';
 import { searchMovies, searchTVShows } from '../../services/api';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import './Search.css'
 
 const Search: React.FC = () => {
     const { activeTab, setActiveMovies, setActiveTVShows, setTopMoviesVisible, setTopTvShowsVisible } = useAppContext();
@@ -49,10 +52,20 @@ const Search: React.FC = () => {
     };
 
     return (
-        <div>
-            <input type="text" value={searchTerm} onChange={handleInputChange} />
+        <div className='search-bar'>
+            <div className="search-input-container">
+                <FontAwesomeIcon icon={faSearch} className="search-icon" />
+                <input
+                    className="search-input"
+                    type="text"
+                    value={searchTerm}
+                    onChange={handleInputChange}
+                    placeholder="Search..."
+                />
+            </div>
         </div>
     );
+    
 };
 
 export default Search;

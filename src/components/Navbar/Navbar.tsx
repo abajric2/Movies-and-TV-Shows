@@ -4,7 +4,7 @@ import { fetchTvShows, fetchMovies } from '../../services/api';
 import { TvShow } from '../../types/TVShowTypes';
 import { Movie } from '../../types/MovieTypes';
 import { useAppContext } from '../../context/AppContext';
-import './Navbar.css'
+import './Navbar.css';
 
 interface NavbarProps {
     setTvShows: React.Dispatch<React.SetStateAction<TvShow[]>>;
@@ -30,19 +30,21 @@ const Navbar: React.FC<NavbarProps> = ({ setTvShows, setMovies }) => {
     };
 
     return (
-        <div className="navbar">
-            <button
-                className={activeTab === 'movies' ? 'active' : ''}
-                onClick={() => handleTabClick('movies')}
-            >
-                Movies
-            </button>
-            <button
-                className={activeTab === 'tvShows' ? 'active' : ''}
-                onClick={() => handleTabClick('tvShows')}
-            >
-                TV Shows
-            </button>
+        <div className="navbar-container">
+            <div className="navbar">
+                <button
+                    className={activeTab === 'movies' ? 'active' : ''}
+                    onClick={() => handleTabClick('movies')}
+                >
+                    Movies
+                </button>
+                <button
+                    className={activeTab === 'tvShows' ? 'active' : ''}
+                    onClick={() => handleTabClick('tvShows')}
+                >
+                    TV Shows
+                </button>
+            </div>
         </div>
     );
 };

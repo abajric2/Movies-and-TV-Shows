@@ -4,7 +4,7 @@ import { Movie } from '../../types/MovieTypes';
 import { Genre } from '../../types/Genre';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
-import './MovieGridItem.css';
+import '../../styles/GridItem.css';
 
 interface MovieGridItemProps {
   movie: Movie;
@@ -15,7 +15,7 @@ const MovieGridItem: React.FC<MovieGridItemProps> = ({ movie }) => {
 
   return (
     <>
-      <Link to={`/movie/${movie.id}`} className="movie-grid-item" style={{ textDecoration: 'none' }}>
+      <Link to={`/movie/${movie.id}`} className="grid-item" style={{ textDecoration: 'none' }}>
         <img src={posterUrl} alt={movie.title} />
         <h3>{movie.title}</h3>
         <div className="genres-and-rating">

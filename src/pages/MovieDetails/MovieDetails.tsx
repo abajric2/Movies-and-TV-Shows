@@ -29,29 +29,43 @@ const MovieDetails: React.FC = () => {
     }, [id]);
 
     return (
-        <div>
-            {movie &&
-                (<div>
-                    <button onClick={() => { navigate(`/${activeTab}`) }}>Back</button>
-                    {movie.trailer ? (
-                        <iframe
-                            width="560"
-                            height="315"
-                            src={`https://www.youtube.com/embed/${movie.trailer}`}
-                            title="YouTube video player"
-                            allowFullScreen
-                        ></iframe>
-                    ) : (
-                        <img src={backdropUrl} alt={movie?.title} />
-                    )}
-                    <h2>{movie?.title}</h2>
-                    <p>
-                        Genres: {movie?.genres.map((genre: Genre) => genre.name).join(', ')}
-                    </p>
-                    <p>{movie?.overview}</p>
-                    <p>Release Date: {movie?.release_date}</p>
-                    <p>Vote Average: {movie?.vote_average}</p>
-                </div>)}
+        <div className="media-details-container">
+            {movie && (
+                <div>
+                    <button className="back-button" onClick={() => { navigate(`/${activeTab}`) }}>Back</button>
+                    <div className="media-container">
+                        {movie.trailer ? (
+                            <div className="video-wrapper">
+                                <iframe
+                                    width="900"
+                                    height="400"
+                                    src={`https://www.youtube.com/embed/${movie.trailer}`}
+                                    title="YouTube video player"
+                                    allowFullScreen
+                                ></iframe>
+                                <div className="media-title"><strong>{movie.title}</strong></div>
+                            </div>
+                        ) : (
+                            <div className="image-wrapper">
+                                <img src={backdropUrl} alt={movie?.title} className="media" />
+                                <div className="media-title"><strong>{movie.title}</strong></div>
+                            </div>
+                        )}
+                        <div className="basic-details">
+                            <h2>{movie.title}</h2>
+                            <p>
+                                <strong>Genres:</strong> {movie?.genres.map((genre: Genre) => genre.name).join(', ')}
+                            </p>
+                            <p><strong>Release Date:</strong> {movie.release_date}</p>
+                            <p><strong>Rating:</strong> {movie.vote_average}</p>
+                        </div>
+                    </div>
+                    <div className="overview">
+                        <h3>Overview</h3>
+                        <p>{movie.overview}</p>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };

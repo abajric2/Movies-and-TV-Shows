@@ -36,15 +36,21 @@ const TVShowDetails: React.FC = () => {
                     <button className="back-button" onClick={() => { navigate(`/${activeTab}`) }}>Back</button>
                     <div className="media-container">
                         {tvShow.trailer ? (
-                            <iframe
-                                width="900"
-                                height="400"
-                                src={`https://www.youtube.com/embed/${tvShow.trailer}`}
-                                title="YouTube video player"
-                                allowFullScreen
-                            ></iframe>
+                            <div className="video-wrapper">
+                                <iframe
+                                    width="900"
+                                    height="400"
+                                    src={`https://www.youtube.com/embed/${tvShow.trailer}`}
+                                    title="YouTube video player"
+                                    allowFullScreen
+                                ></iframe>
+                                <div className="media-title"><strong>{tvShow.name}</strong></div>
+                            </div>
                         ) : (
-                            <img src={backdropUrl} alt={tvShow?.name} className="media" />
+                            <div className="image-wrapper">
+                                <img src={backdropUrl} alt={tvShow?.name} className="media" />
+                                <div className="media-title"><strong>{tvShow.name}</strong></div>
+                            </div>
                         )}
                         <div className="basic-details">
                             <h2>{tvShow.name}</h2>

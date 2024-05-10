@@ -1,20 +1,9 @@
-import { Genre } from './Genre'
+import { Media } from './Media'
+import { MediaResponse } from './MediaResponse';
 
-export interface TvShow {
-    backdrop_path: string;
-    genre_ids: number[];
-    id: number;
-    poster_path: string;
+export interface TvShow extends Media {
     name: string;
-    overview: string;
     first_air_date: string;
-    vote_average: number;
-    genres: Genre[];
-    trailer?: string | null;
 }
 
-export interface TvShowsResponse {
-    page: number;
-    results: TvShow[];
-    genres: Genre[];
-}
+export type TvShowsResponse = MediaResponse<TvShow>;

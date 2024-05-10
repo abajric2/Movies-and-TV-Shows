@@ -10,6 +10,7 @@ import { useAppContext } from '../../context/AppContext';
 const TVShowDetails: React.FC = () => {
     const { id } = useParams<{ id: string }>();
     const [tvShow, setTvShow] = useState<TvShow | null>(null);
+    const [showNotFound, setShowNotFound] = useState<boolean>(false);
     const backdropUrl = `https://image.tmdb.org/t/p/original${tvShow?.backdrop_path}`;
     const navigate = useNavigate();
     const { activeTab } = useAppContext();
@@ -23,6 +24,9 @@ const TVShowDetails: React.FC = () => {
                 }
             } catch (error) {
                 console.error('Error fetching TV show details:', error);
+                setTimeout(() => {
+                    setShowNotFound(true);
+                }, 1000);
             }
         };
 
@@ -67,7 +71,8 @@ const TVShowDetails: React.FC = () => {
                     </div>
                 </div>
             ) : (
-                <div className='not-found'>TV Show not found</div>
+                // Prikaži tek "TV Show not found" samo ako showNotFound state postavi na true
+                showNotFound && <div className='not-found'>TV Show not found</div>
             )}
         </div>
     );

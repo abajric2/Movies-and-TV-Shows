@@ -10,6 +10,7 @@ import { useAppContext } from '../../context/AppContext';
 const MovieDetails: React.FC = () => {
     const { id } = useParams<{ id: string }>();
     const [movie, setMovie] = useState<Movie | null>(null);
+    const [movieNotFound, setMovieNotFound] = useState<boolean>(false); 
     const backdropUrl = `https://image.tmdb.org/t/p/original${movie?.backdrop_path}`;
     const navigate = useNavigate();
     const { activeTab } = useAppContext();
@@ -22,6 +23,9 @@ const MovieDetails: React.FC = () => {
                 setMovie(movieData);
             } catch (error) {
                 console.error('Error fetching movie details:', error);
+                setTimeout(() => {
+                    setMovieNotFound(true);
+                }, 1000);
             }
         };
 
@@ -66,7 +70,7 @@ const MovieDetails: React.FC = () => {
                     </div>
                 </div>
             ) : (
-                <div className='not-found'>Movie not found</div>
+                movieNotFound && <div className='not-found'>Movie not found</div>
             )}
         </div>
     );

@@ -26,7 +26,7 @@ const GridItem = <T extends Media>({ media, title, path }: GridItemProps<T>) => 
                         <p>{media.vote_average}</p>
                     </div>
                     <div className="genres">
-                        {media.genres.map((genre: Genre, index: number) => (
+                        {media.genres?.map((genre: Genre, index: number) => (
                             <p key={index}>{genre.name}</p>
                         ))}
                     </div>

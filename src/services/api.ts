@@ -125,14 +125,23 @@ const fetchMediaById = async <T extends Media>(mediaType: MediaType, id: number)
     return data;
 };
 
-export const fetchMovieById = async (id: number): Promise<Movie | null> => {
-    const data = await fetchMediaById<Movie>('movie', id) as Movie | null;
+export const fetchMovieById = async (id: number | string): Promise<Movie | null> => {
+    const movieId = typeof id === 'string' ? parseInt(id) : id;
+    if (isNaN(movieId)) {
+        throw new Error('Invalid movie ID');
+    }
+    const data = await fetchMediaById<Movie>('movie', movieId) as Movie | null;
     return data;
 };
 
-export const fetchTVShowById = async (id: number): Promise<TvShow | null> => {
-    const data = await fetchMediaById<TvShow>('tv', id) as TvShow | null;
+export const fetchTVShowById = async (id: number | string): Promise<TvShow | null> => {
+    const tvShowId = typeof id === 'string' ? parseInt(id) : id;
+    if (isNaN(tvShowId)) {
+        throw new Error('Invalid TV show ID');
+    }
+    const data = await fetchMediaById<TvShow>('tv', tvShowId) as TvShow | null;
     return data;
 };
+
 
 export default fetchData;

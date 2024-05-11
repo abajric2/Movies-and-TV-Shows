@@ -30,7 +30,7 @@ const MoviesPage: React.FC<MoviesPageProps> = ({ movies }) => {
 
     return (
         <div className="grid">
-            {moviesToDisplay.map((movie) => (
+            {moviesToDisplay?.map((movie) => (
                 <GridItem
                     key={movie.id}
                     media={movie}

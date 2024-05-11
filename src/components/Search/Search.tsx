@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { useAppContext } from '../../context/AppContext';
-import { searchMovies, searchTVShows } from '../../services/api';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { useAppContext } from '../../context/AppContext';
+import { searchMovies, searchTVShows } from '../../services/api';
 import './Search.css'
 
 const Search: React.FC = () => {
@@ -65,7 +65,7 @@ const Search: React.FC = () => {
             </div>
         </div>
     );
-    
+
 };
 
 export default Search;

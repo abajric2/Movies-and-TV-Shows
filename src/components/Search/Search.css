@@ -7,13 +7,15 @@
     padding: 6px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
+
 .search-bar:hover {
     background-color: #161616;
 }
+
 .search-input-container {
     position: relative;
     display: flex;
-    align-items: center; 
+    align-items: center;
 }
 
 .search-icon {
@@ -23,7 +25,7 @@
 }
 
 .search-input {
-    flex: 1; 
+    flex: 1;
     padding: 8px 12px;
     margin-right: 20px;
     color: #f0f0f0;
@@ -33,4 +35,3 @@
     box-shadow: none;
     transition: background-color 0.3s;
 }
-

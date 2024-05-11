@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { TvShow } from '../../types/TVShow';
-import TvShowGridItem from '../../components/TVShowGridItem/TVShowGridItem';
-import './TVShowsPage.css';
-import { fetchTvShows } from '../../services/api';
 import { useAppContext } from '../../context/AppContext';
+import GridItem from '../../components/GridItem/GridItem';
+import { fetchTvShows } from '../../services/api';
+import { TvShow } from '../../types/TVShow';
+import '../../styles/Grid.css';
 
 interface TvShowsPageProps {
     tvShows: TvShow[];
@@ -29,9 +29,14 @@ const TVShowsPage: React.FC<TvShowsPageProps> = ({ tvShows }) => {
     const tvShowsToDisplay = (topTvShowsVisible) ? (tvShows.length > 0 ? tvShows : loadedTvShows) : (activeTVShows);
 
     return (
-        <div className="tv-shows-grid">
+        <div className="grid">
             {tvShowsToDisplay.map((tvShow) => (
-                <TvShowGridItem key={tvShow.id} tvShow={tvShow} />
+                <GridItem
+                    key={tvShow.id}
+                    media={tvShow}
+                    path={`/tvShow/${tvShow.id}`}
+                    title={tvShow.name}
+                />
             ))}
         </div>
     );

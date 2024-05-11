@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Movie } from '../../types/Movie';
-import MovieGridItem from '../../components/MovieGridItem/MovieGridItem';
-import './MoviesPage.css';
-import { fetchMovies } from '../../services/api';
 import { useAppContext } from '../../context/AppContext';
+import GridItem from '../../components/GridItem/GridItem';
+import { fetchMovies } from '../../services/api';
+import { Movie } from '../../types/Movie';
+import '../../styles/Grid.css';
 
 interface MoviesPageProps {
     movies: Movie[];
@@ -27,10 +27,16 @@ const MoviesPage: React.FC<MoviesPageProps> = ({ movies }) => {
     }, [movies]);
 
     const moviesToDisplay = (topMoviesVisible) ? (movies.length > 0 ? movies : loadedMovies) : (activeMovies);
+
     return (
-        <div className="movies-grid">
+        <div className="grid">
             {moviesToDisplay.map((movie) => (
-                <MovieGridItem key={movie.id} movie={movie} />
+                <GridItem
+                    key={movie.id}
+                    media={movie}
+                    path={`/movie/${movie.id}`}
+                    title={movie.title}
+                />
             ))}
         </div>
     );

@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { Route, Routes, Navigate, useLocation } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
+import Search from '../Search/Search';
+import { AppProvider } from '../../context/AppContext';
 import MoviesPage from '../../pages/MoviesPage/MoviesPage';
 import TvShowsPage from '../../pages/TVShowsPage/TVShowsPage';
-import { TvShow } from '../../types/TVShow';
-import { Movie } from '../../types/Movie';
-import { AppProvider } from '../../context/AppContext';
-import Search from '../../components/Search/Search';
 import MovieDetails from '../../pages/MovieDetails/MovieDetails';
 import TVShowDetails from '../../pages/TVShowDetails/TVShowDetails';
+import { TvShow } from '../../types/TVShow';
+import { Movie } from '../../types/Movie';
 
 const App: React.FC = () => {
   const [tvShows, setTvShows] = useState<TvShow[]>([]);

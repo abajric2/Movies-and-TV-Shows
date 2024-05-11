@@ -2,13 +2,13 @@
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-    position: relative; 
+    position: relative;
     background-color: #0F0F0F;
     transition: transform 0.3s ease;
 }
 
 .grid-item:hover {
-    transform: scale(1.03); 
+    transform: scale(1.03);
 }
 
 .grid-item img {
@@ -29,16 +29,16 @@
 
 .genres {
     color: white;
-    overflow: hidden; 
+    overflow: hidden;
     white-space: nowrap;
-    text-overflow: ellipsis; 
+    text-overflow: ellipsis;
     margin-right: 20px;
 }
 
 .vote-average {
     color: white;
     display: flex;
-    align-items: center; 
+    align-items: center;
 }
 
 .vote-average p,

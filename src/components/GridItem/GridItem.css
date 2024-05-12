@@ -5,6 +5,7 @@
     position: relative;
     background-color: #0F0F0F;
     transition: transform 0.3s ease;
+    max-width: 100%;
 }
 
 .grid-item:hover {

@@ -1,6 +1,6 @@
 # Movies and TV Shows exploring application
 
-# Build and run
+### Build and run
 
 After downloading or cloning the repository, make sure you are positioned in the root folder of the application and open terminal in that folder. To install the necessary dependencies, type:
 
@@ -12,7 +12,7 @@ When the installation of dependencies is complete, you can start the application
 
 Depending on the environment you are using, the browser may automatically open to the required location. If not, manually enter the following URL in your browser: [http://localhost:3000](http://localhost:3000).
 
-For code analysis, detecting style issues, and potential problems in the code, you can run ESLint using the command:
+For code analysis, detecting style issues, and potential problems in the code, you can run **ESLint** using the command:
 
 ### `npm run lint`
 
@@ -28,16 +28,16 @@ To build the application for production, i.e., to create the `build` folder, use
 
 ### `npm run build`
 
-# Features
+### Features
 - Upon startup, you are presented with the top 10 highest-rated TV Shows. By switching tabs, you can alternate between viewing the top 10 movies or TV shows.
 - To search for movies/TV shows based on their names, you need to type at least 3 letters from the title of the media you are interested in into the search bar. If you've searched for movies and are interested in TV shows with the same name, you don't have to type again, just switch to the other tab.
 - The home page displays only basic information about the media. For more details, clicking on any movie/TV show opens a more detailed overview, including a trailer if available.
 - Returning back, you won't lose the input and search results that were displayed to you before opening the details.
   
-# Aditional information
-- The application is fully responsive and suitable for use on tablets or mobile devices.
-- Tests have been written using React Testing Library.
-- ESLint has been used for code analysis.
+### Aditional information
+- The application is fully **responsive** and suitable for use on tablets or mobile devices.
+- Tests have been written using **React Testing Library**.
+- **ESLint** has been used for code analysis.
 - The data is fetched from [TMBD API](https://developers.themoviedb.org/3)
 
 ### Languages, Libraries & Tools

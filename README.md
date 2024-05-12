@@ -1,6 +1,6 @@
 # Movies and TV Shows exploring application
 
-### Build and run
+## Build and run
 
 After downloading or cloning the repository, make sure you are positioned in the root folder of the application and open terminal in that folder. To install the necessary dependencies, type:
 
@@ -28,22 +28,22 @@ To build the application for production, i.e., to create the `build` folder, use
 
 ### `npm run build`
 
-### Features
+## Features
 - Upon startup, you are presented with the top 10 highest-rated TV Shows. By switching tabs, you can alternate between viewing the top 10 movies or TV shows.
 - To search for movies/TV shows based on their names, you need to type at least 3 letters from the title of the media you are interested in into the search bar. If you've searched for movies and are interested in TV shows with the same name, you don't have to type again, just switch to the other tab.
 - The home page displays only basic information about the media. For more details, clicking on any movie/TV show opens a more detailed overview, including a trailer if available.
 - Returning back, you won't lose the input and search results that were displayed to you before opening the details.
   
-### Aditional information
+## Aditional information
 - The application is fully **responsive** and suitable for use on tablets or mobile devices.
 - Tests have been written using **React Testing Library**.
 - **ESLint** has been used for code analysis.
 - The data is fetched from [TMBD API](https://developers.themoviedb.org/3)
 
-### Languages, Libraries & Tools
+## Languages, Libraries & Tools
 <p align="left"> <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg" alt="TypeScript" width="40" height="40"/> </a> <a href="https://react.dev/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React" width="40" height="40"/> </a> 
 
-### Contact
+## Contact
 - Email: [bajricaminaa@gmail.com](mailto:bajricaminaa@gmail.com)
 - LinkedIn: [Amina Bajric](https://www.linkedin.com/in/amina-bajric-b75619291/)
 - GitHub: [abajric2](https://github.com/abajric2/)

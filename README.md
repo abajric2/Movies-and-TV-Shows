@@ -1,46 +1,52 @@
-# Getting Started with Create React App
+# Movies and TV Shows exploring application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Build and run
 
-## Available Scripts
+After downloading or cloning the repository, make sure you are positioned in the root folder of the application and open terminal. To install the necessary dependencies, type:
 
-In the project directory, you can run:
+### `npm install`
+
+When the installation of necessary dependencies is complete, you can start the application by typing the command:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Depending on the environment you are using, the browser may automatically open to the required location. If not, manually enter the following URL in your browser: [http://localhost:3000](http://localhost:3000).
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+For code analysis, detecting style issues, and potential problems in the code, you can run ESLint using the command:
+
+### `npm run lint`
+
+Potential issues and warnings will be displayed in the terminal after running that command.
+
+To run the tests, type:
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+When running the tests, you may need to enter the letter "a" to run all the tests. In any case, follow the instructions. Once all the tests are executed, you will receive a report in the terminal indicating the total number of tests and how many passed/failed.
+
+To build the application for production, i.e., to create the `build` folder, use the following command:
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Features
+- Upon startup, you are presented with the top 10 highest-rated TV Shows. By switching tabs, you can alternate between viewing the top 10 movies or TV shows.
+- To search for movies/TV shows based on their names, you need to type at least 3 letters from the title of the media you are interested in into the search bar. If you've searched for movies and are interested in TV shows with the same name, you don't have to type again, just switch to the other tab.
+- The home page displays only basic information about the media. For more details, clicking on any movie/TV show opens a more detailed overview, including a trailer if available.
+- Returning back, you won't lose the input and search results that were displayed to you before opening the details.
+  
+# Aditional information
+- The application is fully responsive and suitable for use on tablets or mobile devices.
+- Tests have been written using React Testing Library.
+- ESLint has been used for code analysis.
+- The data is fetched from [TMBD API](https://developers.themoviedb.org/3)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Languages, Libraries & Tools
+<p align="left"> <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg" alt="TypeScript" width="40" height="40"/> </a> <a href="https://react.dev/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React" width="40" height="40"/> </a> 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Contact
+- Email: [bajricaminaa@gmail.com](mailto:bajricaminaa@gmail.com)
+- LinkedIn: [Amina Bajric](https://www.linkedin.com/in/amina-bajric-b75619291/)
+- GitHub: [abajric2](https://github.com/abajric2/)
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).

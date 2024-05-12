@@ -2,11 +2,11 @@
 
 # Build and run
 
-After downloading or cloning the repository, make sure you are positioned in the root folder of the application and open terminal. To install the necessary dependencies, type:
+After downloading or cloning the repository, make sure you are positioned in the root folder of the application and open terminal in that folder. To install the necessary dependencies, type:
 
 ### `npm install`
 
-When the installation of necessary dependencies is complete, you can start the application by typing the command:
+When the installation of dependencies is complete, you can start the application by typing the command:
 
 ### `npm start`
 
